@@ -1,7 +1,9 @@
 # CT Naming & Consolidation Playbook
 
-Concrete, pattern-matchable heuristics for turning a UI gap into a precise event
-recommendation. Apply these in order — most gaps resolve in the first few checks, before you
+Concrete, pattern-matchable heuristics for turning a UI gap or a design moment into a precise
+event recommendation. This file is the *how* behind the design rules CT-X1…X8 in `rules.md`;
+every recommendation must also pass that rulebook's must-haves (CT-M), limits (CT-L), naming
+(CT-N), duplicate (CT-D) and continuity (CT-V) checks. Apply these in order — most gaps resolve in the first few checks, before you
 ever get to "propose a genuinely new event."
 
 Every pattern below was learned from a real multi-hundred-row audit; the illustrative
@@ -31,7 +33,11 @@ Run through this checklist before writing anything down as "MISSING → add even
    the same button as the original action)? Merge into one recommendation, note the
    duplication, don't propose two.
 
-Only after all five come back "no" do you propose a genuinely new event name.
+6. **Is this a redesign of a moment that already has an event?** Keep the name and keys; add
+   `flow_version` (CT-V1, CT-M6). A new design is never on its own a reason for a new name.
+
+Only after all six come back "no" do you propose a genuinely new event name — and state the
+CT-L1 budget count after adding it.
 
 ---
 
@@ -151,7 +157,7 @@ Before naming ANY new property:
 3. Is this a "which page did this fire from" question? It's probably already answered by the
    auto-attached `screen` property — don't add a redundant explicit property for it.
 4. Is this genuinely new? Name it the same way you'd name an event: snake_case, describes
-   the value's meaning, no PII, no opaque codes as the *value* either (prefer human-readable
+   the value's meaning, sensitive values only with a recorded reason (CT-Q1), no opaque codes as the *value* either (prefer human-readable
    enum-style strings over numeric/coded values wherever the property is going to be read by
    a human in a dashboard).
 
