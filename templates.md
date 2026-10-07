@@ -10,8 +10,8 @@ by hand: hand transcription at hundreds of rows reliably drops rows silently.
 | instrument | `ct_spec_<feature>_<date>.csv` · `expected_stream_<feature>.json` |
 | verify | `verify_<scope>_<date>.csv` (format in `verify.md`) |
 
-Default folder: the workspace's existing CT-instrumentation folder (Wiom:
-`C:\Users\ashis\clevertap-instrumentation-plan\`), one dated subfolder per run. **Keep
+Default folder: the workspace's existing CT-instrumentation folder if there is one,
+otherwise ask once; one dated subfolder per run. **Keep
 every `ct_master_*.json`.** It is the "previous version" the next audit diffs against.
 
 ---
